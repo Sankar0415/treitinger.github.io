@@ -3,56 +3,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Treitinger Ventures India Pvt. Ltd.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
+      font-family: 'Poppins', sans-serif;
+      margin: 0; padding: 0;
+      background: #f4f7fc;
       color: #333;
+      overflow-x: hidden;
     }
     header {
       background-color: #0a2a66;
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header img.logo {
+      width: 80px;
+      height: 80px;
+      vertical-align: middle;
+      margin-right: 15px;
+      animation: logoBounce 2s ease infinite;
+    }
+    @keyframes logoBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    header h1 {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 2.4rem;
+      vertical-align: middle;
+      margin: 0;
+      animation: fadeInDown 1s ease forwards;
+    }
+    header p.address {
+      margin: 8px 0 0;
+      font-weight: 300;
+      font-size: 1rem;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      animation-delay: 0.8s;
+      animation-fill-mode: forwards;
     }
     nav {
       background-color: #173a8a;
-      padding: 10px;
       text-align: center;
+      padding: 15px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 20px;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffd700;
     }
     .container {
       max-width: 900px;
-      margin: 30px auto;
+      margin: 40px auto;
       padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    section:nth-child(1) { animation-delay: 0.3s; }
+    section:nth-child(2) { animation-delay: 0.6s; }
+    section:nth-child(3) { animation-delay: 0.9s; }
+    h2 {
+      color: #0a2a66;
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 1.8rem;
+      border-bottom: 3px solid #0a2a66;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+      font-weight: 400;
+      font-size: 1.1rem;
     }
     footer {
       background-color: #0a2a66;
       color: white;
       text-align: center;
-      padding: 15px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      padding: 20px 10px;
+      font-weight: 300;
+      font-size: 0.9rem;
+      margin-top: 40px;
     }
-    h1, h2 {
+    a.contact-link {
       color: #0a2a66;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    a.contact-link:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="https://via.placeholder.com/80x80.png?text=TVI" alt="Treitinger Ventures Logo" class="logo" />
     <h1>Treitinger Ventures India Pvt. Ltd.</h1>
-    <p>36 Bigstreet, Tirunelveli – 627007</p>
+    <p class="address">36 Bigstreet, Tirunelveli – 627007</p>
   </header>
   <nav>
     <a href="#about">About</a>
@@ -63,10 +147,15 @@
     <section id="about">
       <h2>About Us</h2>
       <p>
-        Treitinger Ventures India Pvt. Ltd. is a consulting company focused on delivering world-class SAP implementation and SAP solution services.
-        We help businesses streamline their operations, improve efficiency, and gain real-time insights using powerful ERP tools.
+        Treitinger Ventures India Pvt. Ltd. is a budding SAP consulting company founded in 2022 by Stefan Treitinger and Robin Treitinger. 
+        We focus on delivering world-class SAP implementation and solution services. Our passion is helping businesses streamline their 
+        operations and gain real-time insights using powerful ERP tools.
+      </p>
+      <p>
+        Founded on strong values and innovation, we are committed to supporting your digital transformation journey every step of the way.
       </p>
     </section>
+
     <section id="services">
       <h2>Our Services</h2>
       <ul>
@@ -77,11 +166,12 @@
         <li>Business Process Optimization</li>
       </ul>
     </section>
+
     <section id="contact">
       <h2>Contact Us</h2>
-      <p>Email: info@treitinger.in</p>
-      <p>Phone: +91-9876543210</p>
-      <p>LinkedIn: <a href="#">Company LinkedIn</a></p>
+      <p>Email: <a href="mailto:info@treitinger.in" class="contact-link">info@treitinger.in</a></p>
+      <p>Phone: <a href="tel:+919037154855" class="contact-link">+91 90371 54855</a></p>
+      <p>LinkedIn: <a href="#" class="contact-link">Company LinkedIn</a></p>
     </section>
   </div>
   <footer>
